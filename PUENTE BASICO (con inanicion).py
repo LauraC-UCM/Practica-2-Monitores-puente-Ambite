@@ -7,7 +7,7 @@ Solution to the one-way tunnel
 
 """
 import time
-import random
+import random 
 from multiprocessing import Lock, Condition, Process
 from multiprocessing import Value
 from multiprocessing import Manager
@@ -16,7 +16,7 @@ NORTH = 0
 SOUTH = 1
 
 NCARS = 5
-NPED = 3     # Como los peatones si pueden pasar en ambos sentidos, no hace falta distinguir SU SENTIDO
+NPED = 3     # Como los peatones si pueden pasar en ambos sentidos, no hace falta distinguir su sentido
 
 TIME_CARS_NORTH = 0.5   # a new car enters each 0.5s
 TIME_CARS_SOUTH = 0.5   # a new car enters each 0.5s
@@ -31,16 +31,16 @@ class Monitor():
         self.mutex = Lock()
         self.patata = Value('i',0)
 
-        self.cNortePasando= Value('i', 0)       # Numero de coches seguidos hacia el norte
-        self.cSurPasando= Value('i', 0)         # Numero de coches seguidos hacia el sur
-        self.peatonesPasando= Value('i', 0)     # Numero de peatones seguidos hacia el sur
+        self.cNortePasando= Value('i', 0)       # Numero de coches del norte dentro del puente
+        self.cSurPasando= Value('i', 0)         # Numero de coches del sur dentro del puente
+        self.peatonesPasando= Value('i', 0)     # Numero de peatones dentro del puente
 
         self.permisoCoches= Condition(self.mutex)       # Variable condicion
         self.permisoPeatones= Condition(self.mutex)     # Variable condicion
 
 
     '''
-    INVARIANTE: (demo en Desarrollo monitor.pdf)
+    INVARIANTE: (demo en Desarrollo monitor.pdf) 
         cNortePasando >= 0
         cSurPasando >= 0
         peatonesPasando >= 0
@@ -48,7 +48,7 @@ class Monitor():
         cSurPasando > 0 => cNortePasando == 0 /\ peatonesPasando == 0
         peatonesPasando > 0 => cNortePasando == 0 /\ cSurPasando == 0
 
-        Hay inanicion porque podrian estar pasando continuamente  2 de ellos sin que el otro pueda entrar. Ademas, si no paran de llegar de un tipo, hasta que no acaben de salir los otros 2 se quedan bloqueados. Hay que poner alguna limitacion de paso -> turnos (PUENTE POR TURNOS.py)
+        Hay inanicion porque podrian estar pasando continuamente  2 de ellos sin que el otro pueda entrar. Ademas, no hoy justicia porque si no paran de llegar de un tipo, hasta que no acaben de salir los otros 2 se quedan bloqueados. Hay que poner alguna limitacion de paso -> turnos (PUENTE POR TURNOS.py)
     '''
 
     def puenteEstaVacio(self):
@@ -159,7 +159,7 @@ def delay_car_south() -> None:
     time.sleep(random.normalvariate(1,0.5))
 
 def delay_pedestrian() -> None:
-    time.sleep(random.normalvariate(1,0.5)) 
+    time.sleep(random.normalvariate(30,10)) 
 '''
 # Sin normales
 def delay_car_north(factor = 3) -> None:
