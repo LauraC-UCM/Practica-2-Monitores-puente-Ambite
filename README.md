@@ -2,7 +2,7 @@
 ## Programación Paralela - Año 2022/2023 - Facultad de CC.Matemáticas UCM
 
 El pueblo de Ambite (https://es.wikipedia.org/wiki/Ambite) tiene un puente que atraviesa el río Tajuña. Es un puente compartido por peatones y vehículos. La anchura del
-puente no permite el paso de vehículos en ambos sentidos (Observa la figura 1.). Por motivos de seguridad los peatones y los vehículos no pueden compartir el puente. En el caso de los peatones, sí que que pueden pasar peatones en sentido contrario.
+puente no permite el paso de vehículos en ambos sentidos. Por motivos de seguridad los peatones y los vehículos no pueden compartir el puente. En el caso de los peatones, sí que que pueden pasar peatones en sentido contrario.
 
 ### Ejercicio 1
 Desarrolla en papel el monitor (o monitores) necesarios. Parte de una solución sencilla que cumpla la seguridad y a partir de ella intenta buscar soluciones a los problema de inanición.
