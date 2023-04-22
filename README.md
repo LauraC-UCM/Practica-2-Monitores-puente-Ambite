@@ -19,5 +19,5 @@ Implementa una solución en python con la biblioteca multiprocessing.
 
 #### SOLUCIÓN: 
   - Desarrollo monitor.pdf -> Ejercicio 1 resuelto.
-  - PUENTE BASICO (con inanicion).py -> Ejercicio 2 resuelto sin turnos en el monitor, lo que provoca inanición de algún proceso.
-  - PUENTE POR TURNOS.py -> Ejercicio 2 resuelto con turnos en el monitor, garantizando la exclusión mutua, la justicia, auseancia de deadlocks y ausencia de inanición.
+  - PUENTE_BASICO (con inanicion).py -> Ejercicio 2 resuelto sin turnos en el monitor, lo que provoca inanición de algún proceso.
+  - PUENTE_POR_TURNOS.py -> Ejercicio 2 resuelto con turnos en el monitor, garantizando la exclusión mutua, la justicia, auseancia de deadlocks y ausencia de inanición.
